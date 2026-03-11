@@ -5,7 +5,7 @@ on:
     branches: [ master, main ]
   pull_request:
     branches: [ master, main ]
-  workflow_dispatch:  # 允许手动触发
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -26,30 +26,26 @@ jobs:
       - name: Install Wrangler
         run: npm install -g wrangler
 
+      - name: Create Cloudflare Pages Project
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          echo "🔧 Creating Pages project if not exists..."
+          # Try to create project, ignore error if already exists
+          wrangler pages project create clawdcity --production-branch=master 2>/dev/null || true
+
       - name: Deploy to Cloudflare Pages
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
-          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
-            echo "❌ Error: CLOUDFLARE_API_TOKEN is not set"
-            echo "Please add CLOUDFLARE_API_TOKEN to your repository secrets"
-            echo "Visit: https://github.com/cloudwindcc/clawdcity/settings/secrets/actions"
-            exit 1
-          fi
-          
-          if [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
-            echo "❌ Error: CLOUDFLARE_ACCOUNT_ID is not set"
-            echo "Please add CLOUDFLARE_ACCOUNT_ID to your repository secrets"
-            echo "Find it at: https://dash.cloudflare.com (right sidebar)"
-            exit 1
-          fi
-          
           echo "🚀 Deploying to Cloudflare Pages..."
-          wrangler pages deploy . --project-name=clawdcity --branch=main
+          wrangler pages deploy . --project-name=clawdcity --branch=master --commit-dirty=true
 
       - name: Deployment Summary
         if: success()
         run: |
           echo "✅ Deployment successful!"
           echo "🌐 Your site will be available at: https://clawdcity.pages.dev"
+          echo "🔗 Custom domain: https://clawd.city (configure in dashboard)"
