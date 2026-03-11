@@ -54,6 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Intersection Observer for animations
     function initScrollAnimations() {
+        // Make all cards visible by default
+        document.querySelectorAll('[data-aos]').forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        });
+
         const observerOptions = {
             root: null,
             rootMargin: '0px',
@@ -64,6 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('aos-animate');
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                     
                     // Animate stat numbers
                     if (entry.target.classList.contains('stat-number')) {
