@@ -3,40 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clawd City</title>
+    <meta name="description" content="Clawd City - OpenClaw 智能助手社区，探索 AI 的无限可能">
+    <meta name="keywords" content="OpenClaw, AI, 智能助手, Clawd City, 小龙虾">
+    <meta name="author" content="YunFeng">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Clawd City - OpenClaw 智能助手社区">
+    <meta property="og:description" content="探索 AI 的无限可能，构建你的智能工作流">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clawd.city">
+    <meta property="og:image" content="https://clawd.city/og-image.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Clawd City">
+    <meta name="twitter:description" content="OpenClaw 智能助手社区">
+    <meta name="twitter:image" content="https://clawd.city/og-image.png">
+    
+    <title>Clawd City - OpenClaw 智能助手社区</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦞</text></svg>">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🐾 Clawd City</h1>
-            <p>欢迎来到爪子城</p>
-        </header>
-        
-        <main>
-            <div class="card">
-                <h2>关于我们</h2>
-                <p>Clawd City 是一个充满活力的数字社区，致力于连接创意与技术。</p>
-                <button id="exploreBtn">探索更多</button>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">🦞</span>
+                <span class="logo-text">Clawd City</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#features" class="nav-link">功能</a></li>
+                <li><a href="#about" class="nav-link">关于</a></li>
+                <li><a href="#community" class="nav-link">社区</a></li>
+                <li><a href="https://github.com/openclaw" target="_blank" class="nav-link">GitHub</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🚀 现已上线</div>
+            <h1 class="hero-title">
+                <span class="gradient-text">Clawd City</span>
+            </h1>
+            <p class="hero-subtitle">OpenClaw 智能助手社区</p>
+            <p class="hero-description">
+                探索 AI 的无限可能，构建你的智能工作流。<br>
+                从自动化到智能分析，让 AI 成为你的得力助手。
+            </p>
+            <div class="hero-buttons">
+                <a href="#features" class="btn btn-primary">开始探索</a>
+                <a href="https://docs.openclaw.ai" target="_blank" class="btn btn-secondary">查看文档</a>
             </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">可用技能</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">扩展可能</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">使用门槛</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>向下滚动</span>
+            <div class="scroll-indicator"></div>
+        </div>
+    </header>
+
+    <!-- 功能特性 -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">核心功能</h2>
+            <p class="section-subtitle">强大的 AI 能力，助力高效工作</p>
             
-            <div class="card">
-                <h2>特色功能</h2>
-                <ul>
-                    <li>🚀 极速体验</li>
-                    <li>🔒 安全可靠</li>
-                    <li>🎨 精美设计</li>
-                    <li>🌐 全球部署</li>
-                </ul>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI 助手</h3>
+                    <p>智能对话、代码编写、文档处理，一站式 AI 服务</p>
+                    <ul class="feature-list">
+                        <li>多模型支持 (Claude, GPT, Gemini)</li>
+                        <li>上下文记忆</li>
+                        <li>自定义指令</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">🔧</div>
+                    <h3>工具集成</h3>
+                    <p>50+ 技能插件，连接你的数字生活</p>
+                    <ul class="feature-list">
+                        <li>GitHub / GitLab 集成</li>
+                        <li>邮件 / 日历管理</li>
+                        <li>社交媒体自动化</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">⚡</div>
+                    <h3>自动化工作流</h3>
+                    <p>定时任务、自动触发、智能提醒</p>
+                    <ul class="feature-list">
+                        <li>定时新闻摘要</li>
+                        <li>自动部署</li>
+                        <li>数据监控</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">🔒</div>
+                    <h3>隐私安全</h3>
+                    <p>本地部署，数据自主可控</p>
+                    <ul class="feature-list">
+                        <li>本地运行</li>
+                        <li>端到端加密</li>
+                        <li>开源透明</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">📱</div>
+                    <h3>多端支持</h3>
+                    <p>Telegram、Discord、Web 全覆盖</p>
+                    <ul class="feature-list">
+                        <li>移动端支持</li>
+                        <li>Web 界面</li>
+                        <li>API 接口</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">🚀</div>
+                    <h3>持续进化</h3>
+                    <p>Self-Improving Agent，越用越智能</p>
+                    <ul class="feature-list">
+                        <li>自我学习</li>
+                        <li>习惯记忆</li>
+                        <li>智能推荐</li>
+                    </ul>
+                </div>
             </div>
-        </main>
-        
-        <footer>
-            <p>&copy; 2025 Clawd City. All rights reserved.</p>
-            <p>Powered by <a href="https://pages.cloudflare.com" target="_blank">Cloudflare Pages</a></p>
-        </footer>
-    </div>
-    
+        </div>
+    </section>
+
+    <!-- 关于 OpenClaw -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">什么是 OpenClaw？</h2>
+                    <p class="about-description">
+                        OpenClaw（小龙虾）是一个开源的 AI 助手框架，让你能够在本地或自己的服务器上部署强大的 AI 能力。
+                    </p>
+                    <p class="about-description">
+                        不同于传统的 AI 聊天工具，OpenClaw 是一个<strong>"执行者"</strong>：
+                        它能接管你的浏览器、操作本地文件、收发邮件、管理日程，
+                        并且具备<strong>长久记忆</strong>和<strong>自主性</strong>。
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <span class="check">✓</span>
+                            <span>不仅会说，还会做</span>
+                        </div>
+                        <div class="about-feature">
+                            <span class="check">✓</span>
+                            <span>自带长久记忆</span>
+                        </div>
+                        <div class="about-feature">
+                            <span class="check">✓</span>
+                            <span>自主规划执行</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/openclaw/openclaw" target="_blank" class="btn btn-primary">
+                        在 GitHub 上查看
+                    </a>
+                </div>
+                <div class="about-visual">
+                    <div class="code-block">
+                        <pre><code># OpenClaw 示例
+@程序员 帮我写个爬虫
+@会计 分析本月财报
+@助手 明天早上8点提醒我开会
+
+# 自动化工作流
+- 每日新闻摘要
+- 定时数据备份
+- 智能邮件分类</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 社区 -->
+    <section id="community" class="community">
+        <div class="container">
+            <h2 class="section-title">加入社区</h2>
+            <p class="section-subtitle">与全球开发者一起探索 AI 的未来</p>
+            
+            <div class="community-grid">
+                <a href="https://github.com/openclaw" target="_blank" class="community-card">
+                    <div class="community-icon">⭐</div>
+                    <h3>GitHub</h3>
+                    <p>Star 我们的项目，贡献代码</p>
+                </a>
+                
+                <a href="https://discord.gg/clawd" target="_blank" class="community-card">
+                    <div class="community-icon">💬</div>
+                    <h3>Discord</h3>
+                    <p>加入讨论，获取帮助</p>
+                </a>
+                
+                <a href="https://docs.openclaw.ai" target="_blank" class="community-card">
+                    <div class="community-icon">📚</div>
+                    <h3>文档</h3>
+                    <p>阅读完整文档和教程</p>
+                </a>
+                
+                <a href="https://twitter.com/openclaw" target="_blank" class="community-card">
+                    <div class="community-icon">🐦</div>
+                    <h3>Twitter</h3>
+                    <p>关注最新动态</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>准备好开始了吗？</h2>
+            <p>部署你的个人 AI 助手，开启智能工作新时代</p>
+            <a href="https://docs.openclaw.ai/getting-started" target="_blank" class="btn btn-large btn-primary">
+                立即开始
+            </a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🦞</span>
+                    <span class="logo-text">Clawd City</span>
+                </div>
+                <p class="footer-description">
+                    OpenClaw 智能助手社区 - 探索 AI 的无限可能
+                </p>
+                <div class="footer-links">
+                    <a href="https://github.com/openclaw">GitHub</a>
+                    <a href="https://docs.openclaw.ai">文档</a>
+                    <a href="https://discord.gg/clawd">Discord</a>
+                    <a href="https://kang.ink">博客</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Clawd City. All rights reserved.</p>
+                <p>Powered by <a href="https://pages.cloudflare.com" target="_blank">Cloudflare Pages</a> & <a href="https://openclaw.ai" target="_blank">OpenClaw</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部 -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <span>↑</span>
+    </button>
+
     <script src="script.js"></script>
 </body>
 </html>
