@@ -1,4 +1,4 @@
-<!-- Updated: 2026-05-07 -->
+<!-- Updated: 2026-05-09 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -97,33 +97,34 @@
     <section id="news" class="features">
         <div class="container">
             <h2 class="section-title">🔥 最新动态</h2>
-            <p class="section-subtitle">OpenClaw v2026.5.6 发布 · 2026年5月6日</p>
+            <p class="section-subtitle">OpenClaw v2026.5.7 发布 · 2026年5月7日</p>
             
             <div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 32px; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.1); max-width: 900px; margin-left: auto; margin-right: auto;">
-                <h3 style="color: #ffd700; margin-bottom: 16px; font-size: 1.3em;">🚀 OpenClaw v2026.5.6 紧急修复版发布</h3>
-                <p style="color: #ccc; line-height: 1.7;"><strong>紧急修复 OpenAI Codex OAuth 路由问题</strong> — 回退了 doctor --fix 对有效 openai-codex/* ChatGPT/Codex OAuth 路由的错误重写，修复 GPT-5.5 OAuth 专用设置。同时修复了插件/运行时 fetch、Discord 心跳超时误判、xAI Grok 4.3 reasoning effort 错误、Web fetch 超时清理等问题。</p>
+                <h3 style="color: #6bcb77; margin-bottom: 16px; font-size: 1.3em;">✨ OpenClaw v2026.5.7 最新稳定版发布</h3>
+                <p style="color: #ccc; line-height: 1.7;"><strong>Cron 和 Gateway Session 修复</strong> — 修复高并发场景下的会话泄漏问题，修复长连接场景下的内存泄漏，改进边界条件下的连接池管理。同时包含 Discord 消息路由增强、Telegram 访问控制优化、Codex OAuth 保存增强。</p>
+                <p style="color: #888; margin-top: 12px; font-size: 0.9em;">经过4月24日至5月4日的「不稳定期」，v2026.5.4 至 v2026.5.7 已恢复稳定。</p>
             </div>
             
             <div class="features-grid" style="max-width: 1100px; margin: 0 auto;">
                 <div class="feature-card" style="text-align:left;">
-                    <div class="feature-icon">🔧</div>
-                    <h3>OpenAI Codex 修复</h3>
-                    <p>回退 2026.5.5 错误的 doctor --fix 修复，恢复有效的 ChatGPT/Codex OAuth 路由。</p>
+                    <div class="feature-icon">⏰</div>
+                    <h3>Cron 调度器修复</h3>
+                    <p>修复高并发场景下的会话泄漏问题，改进连接池管理。</p>
                 </div>
                 <div class="feature-card" style="text-align:left;">
-                    <div class="feature-icon">🔌</div>
-                    <h3>插件运行时修复</h3>
-                    <p>修复第三方符号元数据导致的 SDK/guarded/proxy fetch 路径拒绝问题。</p>
-                </div>
-                <div class="feature-card" style="text-align:left;">
-                    <div class="feature-icon">🌐</div>
-                    <h3>Web Fetch 修复</h3>
-                    <p>请求超时时正确清理 guarded dispatcher，释放 Gateway 工具槽。</p>
+                    <div class="feature-icon">🔗</div>
+                    <h3>Gateway 内存优化</h3>
+                    <p>修复长连接场景下的内存泄漏，边界条件更健壮。</p>
                 </div>
                 <div class="feature-card" style="text-align:left;">
                     <div class="feature-icon">💬</div>
-                    <h3>Control UI 改善</h3>
-                    <p>会话压缩计数、响应式表格布局、慢速渲染监控等多项改进。</p>
+                    <h3>Discord/Telegram 增强</h3>
+                    <p>离线消息队列修复，多管理员权限继承模型细化。</p>
+                </div>
+                <div class="feature-card" style="text-align:left;">
+                    <div class="feature-icon">🔑</div>
+                    <h3>Codex OAuth 增强</h3>
+                    <p>Token 刷新逻辑稳定性提升，长期运行场景更可靠。</p>
                 </div>
             </div>
             
@@ -322,7 +323,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Clawd City · 最后更新：2026-05-07</p>
+                <p>&copy; 2026 Clawd City · 最后更新：2026-05-09</p>
                 <p>Powered by <a href="https://pages.cloudflare.com" target="_blank">Cloudflare Pages</a> & <a href="https://openclaw.ai" target="_blank">OpenClaw</a></p>
             </div>
         </div>
